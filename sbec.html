@@ -3,7 +3,8 @@
    <head> <!-- REMOVE this from HTML: --> <!-- <script type="module"> import { initializeApp } from ... ... </script> --> <!--end--> 
    <title>Sbec international food system</title> <!--device--> 
    <meta name="viewport" content="width=device-width, initial-scale=1">
-          <link rel="icon" type="images1/iconss/sbeclogo.png" href="favicon.png">
+     <link rel="icon" href="images1/iconss/sbeclogo.png" type="image/png">
+
     <!--roboto--> 
     <link rel="preconnect" href="https://fonts.googleapis.com">
      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
@@ -13,7 +14,7 @@
      <link rel="stylesheet" href="styles/shared/general.css"> 
      <link rel="stylesheet" href="styles/shared/sbec-header.css"> 
      <link rel="stylesheet" href="styles/pages/sbec.css">
-      </head> <body style="background-color: azure;">
+      </head> <body >
        
 <h1 id="loading-screen">
   <img class="head" src="images1/iconss/sbeclogo.png">
@@ -47,7 +48,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(to right, rgb(1, 0, 2));
+    background:  rgb(1, 0, 2);
     height: 100%;
     margin-top: 0;
     color: white;
@@ -135,20 +136,20 @@
                   <a class="cart-links header-links" href="check.html"> 
                     <img class="cart-icons" src="images1/iconss/cart-icon.png"> 
                     <div class="cart-quantitys js-quantity">0</div> 
-                    <div cass="cart-texts">orders</div> </a><!--ancho2 end-->
+                    <div class="cart-texts">orders</div> </a><!--ancho2 end-->
                    </div><!--div4 end-->
                   
                      </div><!--div1--> 
                  <a href="info.html" ><button class="info">Info</button></a>
                      <div class="amount" style="  background:rgba(0, 0, 0, 0.751);
-"><span class="span">D</span>0</span>
+"><span class="span">D</span><span>0</span>
                      </div> <button id="logoutBtn" class="logoutBtn">Logout</button>
                                  <!---<div class="amount"><span class="span">D</span>6500</span></div>--> <!--new-->
                       <div class="mains"> 
                         <div class="product-grids js-food"  > <!--new--> </div><!--div2--> 
                         
                         </div> <button id="add-money-button" style="display: none;">💰 Add G$1000</button>
-                         <script type="module" src="java/sbec.js"> 
+                        <script type="module" src="java/sbec.js" defer></script>
 
                         
                           </script>
