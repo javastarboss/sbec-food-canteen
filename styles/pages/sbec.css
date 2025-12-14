@@ -223,17 +223,12 @@ height: 100%;
 .add-to-cart-buttons {
 
 z-index: 0;
-justify-content: center;
 margin:auto;
-left: 70px;
-align-items: center;
-text-align: center;
- bottom: 40px;
- padding-bottom: 800px;
+
 color: rgb(0, 0, 0);
 font-size: 15px;
 padding: 12px 20px;
-margin-bottom: -20px;
+
 font-weight: bold;
   border-radius: 50px;
 background:linear-gradient(to top, rgb(255, 217, 0),rgb(255, 0, 0),red,red, rgb(255, 0, 0));
@@ -433,7 +428,12 @@ grid-template-columns: repeat(6, 200px);
 }@media(max-width: 400px){
 #loading-screen span{
   margin-top: 20px;
-}
+}.added-to-cart-visible{
+    margin-left: 50px;
+    font-size: 12px;
+    margin-bottom: -20px;
+    padding-bottom: 50px;
+  }
 }@media(max-width: 450px){
   .product-containers{
     height: 100%;
