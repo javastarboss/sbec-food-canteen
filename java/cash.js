@@ -127,19 +127,26 @@ function setmessage(text, err = false) {
   message.textContent = text;
 }
 
-async function ebro (){
-  const user = auth.currentUser;
-  let userName = "Anonymous"; 
-  if (user) {
+let useruid = 'Loading...'; 
+const user = auth.currentUser;
+if (user) {
+  try {
     const userRef = doc(db, "users", user.uid);
     const docSnap = await getDoc(userRef);
+
     if (docSnap.exists()) {
       const data = docSnap.data();
-      userName = data.name || "Anonymous";
+      // 2. Update the variable
+      useruid = data.id || "Anonymous";
     }
+  } catch (error) {
+    console.error("Error fetching user:", error);
+    useruid = "Error";
   }
-
 }
+
+
+
 
 const sendBtn = document.getElementById('send');
 if (sendBtn) {
@@ -165,7 +172,7 @@ if (sendBtn) {
 
     
       const usersCol = collection(store, 'users');
-      const q = query(usersCol, where('name', '==', recieverName));
+      const q = query(usersCol, where('id', '==', recieverName));
       const books = await getDocs(q);
 
       if (books.empty) {
@@ -207,12 +214,12 @@ if (sendBtn) {
           to: recieverUid,
           amount,
           timestamp: serverTimestamp(),
-          fromName: senderSnap.exists() ? senderSnap.data().name || null : null,
-          toName: recipientSnap.exists() ? recipientSnap.data().name || null : null
+          fromName: senderSnap.exists() ? senderSnap.data().id|| null : null,
+          toName: recipientSnap.exists() ? recipientSnap.data().id || null : null
         });
       });
 
-      setmessage(`Sent D${amount} to ${recieverName}`);
+      setmessage(`Sent D${amount} to user: ${recieverName}`);
     } catch (err) {
       console.error(err);
       setmessage(err.message || "Failed to send money", true);
