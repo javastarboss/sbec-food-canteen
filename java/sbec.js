@@ -447,6 +447,27 @@ onAuthStateChanged(auth, async (user) => {
   } else {
     window.location.href='login.html';
   }
+ const idElement = document.getElementById('id');
+let useruid = 'Loading...'; 
+
+if (user) {
+  try {
+    const userRef = doc(db, "users", user.uid);
+    const docSnap = await getDoc(userRef);
+
+    if (docSnap.exists()) {
+      const data = docSnap.data();
+      // 2. Update the variable
+      useruid = data.id || "Anonymous";
+    }
+  } catch (error) {
+    console.error("Error fetching user:", error);
+    useruid = "Error";
+  }
+}
+
+// 3. Update the DOM element with the final value
+idElement.innerHTML = useruid;
 });
 
 // Display food list
@@ -837,7 +858,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   attachCompositeImageRatings();
 });
-
 /* ---------------- UI stick toggle ---------------- */
 document.querySelector('.stick')?.addEventListener('click', () =>{
   const hope = document.querySelector('.amount');
@@ -854,3 +874,4 @@ document.querySelector('.stick')?.addEventListener('click', () =>{
   hoping?.classList.toggle('infos');
   hoping?.classList.toggle('.info');
 });
+
