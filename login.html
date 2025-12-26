@@ -139,7 +139,7 @@ content="width=device-width, initial-scale=1">
 
 
 
-  <div id="king" class="main"> 
+<div id="king" class="main"> 
   <header class="head" data-aos="zoom-in" data-aos-delay="100"
      data-aos-offset="0" data-aos-duration="1200"   >LogIn | SignUp, to get started </header>
  
@@ -158,6 +158,12 @@ content="width=device-width, initial-scale=1">
      data-aos-offset="0" data-aos-duration="1200"  class="password">Password</div>
 <input data-aos="fade-right" data-aos-delay="1500"
      data-aos-offset="0" data-aos-duration="1200"  style="border-radius: 10px;"   type="password" id="password" placeholder="password" required>
+     
+
+      <div data-aos="fade-right" data-aos-delay="1500"
+     data-aos-offset="0" data-aos-duration="1200"  class="id">User Id</div>
+<input data-aos="fade-right" data-aos-delay="1500"
+     data-aos-offset="0" data-aos-duration="1200"  style="border-radius: 10px;"   type="text" id="id" placeholder="Put if signing up new" required>
      
 <div data-aos="fade-up" data-aos-delay="2000"
      data-aos-offset="0" data-aos-duration="1200"  class="buttons"><button class="sign" onclick="signIn()" style="  border-bottom: solid 2px white; ">Sign Up</button>
@@ -193,12 +199,13 @@ const auth = getAuth(app)
 window.signIn = async ()=>{
   const email= document.getElementById('email').value;
   const password = document.getElementById('password').value;
+  const id = document.getElementById('id').value;
   try {
    
- const info = await createUserWithEmailAndPassword(auth, email, password);
+ const info = await createUserWithEmailAndPassword(auth, email, password, id);
  await setDoc(doc(store, 'users', info.user.uid),{
 email: email,
-
+id: id,
 name: name,
 money: 0
 
@@ -214,14 +221,15 @@ money: 0
 window.logIn = async ()=>{
   const email= document.getElementById('email').value;
   const password = document.getElementById('password').value;
+  const id = document.getElementById('id').value;
   try {
-    await signInWithEmailAndPassword(auth, email, password)
+    await signInWithEmailAndPassword(auth, email, password, id)
     window.location.href = 'sbec.html';
     const user = auth.currentUser;
 const people = doc(store, 'users', user.uid ) 
   }catch(error){
     alert(error.message)
-  }await createUserWithEmailAndPassword(auth, email, password)
+  }await createUserWithEmailAndPassword(auth, email, password, id)
 }
   </script>
 
