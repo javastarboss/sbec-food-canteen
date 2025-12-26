@@ -98,7 +98,7 @@ text-align: center;
 box-shadow: none;
 }
 .email-text {
-  margin-left: -55px;
+  margin-left: -85px;
   padding: 10px;
  font-weight: bold;
   margin-bottom: 10px;
@@ -145,3 +145,4 @@ margin-top: 20px;
   }
 
 }
+
