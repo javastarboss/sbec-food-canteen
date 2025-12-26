@@ -7,11 +7,18 @@ padding: 0;
 margin-top: 130px;
 }
 
+.id{
+text-align: left;
+margin-left: 1px;
+}.required{
+  margin-top: 100px;
+}
+
 .back{
   display: flex;
   background-color: gray;
   position: absolute;
-  padding: 10px 50px 10px 25px;
+  padding: 10px 50px 10px 25px  ;
 
   left:40px;
   top: 20px;
@@ -32,18 +39,19 @@ margin-top: 130px;
   position: fixed;
   left: 500px;
     box-shadow: 0 30px 30px black;
-  top: 80px;
+  top: 10px;
   justify-content: center;
   text-align: center;
 display: grid;
-grid-template-rows:  10px 40px 10px 40px ;
+
+grid-template-rows:  10px 30px 10px 30px 10px 30px;
   row-gap: 20px;
   border: solid 1px rgb(187, 182, 182);
   padding: 50px;
-  padding-top: 130px;
-  padding-bottom: 70px;
+  padding-top: 110px;
+  padding-bottom: 30px;
  background:linear-gradient(to right, rgba(128, 128, 128, 0.632), rgba(68, 64, 64, 0.486), rgba(151, 150, 150, 0.514));;
-scale: 1;
+
 z-index: 2;
 border-radius: 20px;
 }.robot{
@@ -313,6 +321,7 @@ opacity:1
     margin-left: -30px;
  scale: 0.8
   }}
+
 
 
 
