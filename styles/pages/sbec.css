@@ -126,7 +126,7 @@ background-color: black;
 
 .product-containers:hover, .product-containers:active{
 scale: calc(1.07);
-  box-shadow: 0 0 35px rgb(5, 113, 255), 0 0 55px rgb(5, 63, 255);
+  box-shadow: 0 0 35px rgb(255, 5, 5), 0 0 55px rgb(255, 5, 5);
 
 }
 
@@ -136,6 +136,7 @@ scale: calc(1.07);
   scale: calc(1.03);
 }
 }
+
 
 
 .product-image-containers {
