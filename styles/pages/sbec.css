@@ -124,19 +124,19 @@ background-color: black;
   transition: box-shadow 0.3s ease, scale 0.3s ease;
 }
 
-
-.product-containers:hover {
+.product-containers:hover, .product-containers:active{
 scale: calc(1.07);
-  box-shadow: 0 0 35px rgb(255, 5, 5), 0 0 55px rgb(255, 5, 5);
+  box-shadow: 0 0 35px rgb(5, 113, 255), 0 0 55px rgb(5, 63, 255);
 
 }
 
 @media(max-width: 500px){
-.product-containers:hover{
+.product-containers:hover, .product-containers:active{
   box-shadow: 0.2 0 0;
   scale: calc(1.03);
 }
 }
+
 
 .product-image-containers {
   display: flex;
