@@ -2,6 +2,7 @@
   margin-top: 195px;
 cursor: pointer;
 background-color: rgb(97, 2, 2);
+  -webkit-tap-highlight-color: transparent
 
 }
 
